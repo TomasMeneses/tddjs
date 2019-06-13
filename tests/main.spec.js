@@ -21,6 +21,9 @@ describe('Calc',()=>{
             })
         })
         describe('mult', () => {
+            it('should be a function', () => {
+                expect(mult).to.be.a('function');
+            })
             it('should return 4 when mult(2,2)', () => {
                 expect(mult(2,2)).to.be.equal(4);
             })
