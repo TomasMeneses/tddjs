@@ -1,5 +1,21 @@
 import {expect} from 'chai';
 import { sum, sub, mult, div } from '../src/main';
+var chaiHttp = require('chai-http');
+var chai = require('chai')
+
+chai.use(chaiHttp);
+
+
+describe('Http Tests', () => {
+    it('should err to be null and res to be json',() =>{
+        chai.request('https://api.exchangeratesapi.io/')
+            .get('latest')
+            .end((err, res) => {
+                expect(err).to.be.null;
+                expect(res).to.be.json;
+            })
+    })
+})
 
 
 describe('Smoke Tests', () => {
